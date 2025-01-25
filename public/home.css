@@ -215,8 +215,19 @@ tbody tr:hover {
     text-align: center;
     padding: 20px 10px;
     font-size: 14px;
+    position: absolute;
+    bottom: 0;
 }
-
+.table-title{
+    display: flex;
+    font-family: Alegreya Sans SC;
+    word-spacing: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    justify-content: center;
+    color: grey;
+    margin-top: 15px;
+}
 .footer a {
     font-family: Space Mono;
     color: #333333;
@@ -224,6 +235,9 @@ tbody tr:hover {
     margin: 0 10px;
     font-size: 14px;
     transition: color 0.3s ease;
+}
+.footer p i{
+    letter-spacing: 2px;
 }
 
 .footer a:hover {
