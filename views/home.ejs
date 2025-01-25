@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MobiLau</title>
+    <link rel="icon" href="/images/logo2.png" type="image/x-icon" style="border-radius: 50%;">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tulpen+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aoboshi+One&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="navbar">
+      <h2><i class="bi bi-phone"></i> MOBILAU</h2>
+      <div class="extras">
+        <a href="" class="navbar-extras"><i class="bi bi-tablet-landscape"></i> Pads</a>
+        <a href="" class="navbar-extras"><i class="bi bi-earbuds"></i> Audio</a>
+      </div>
+      <button class="menuicon" id="hamburger">
+        <i class="bi bi-list" style="font-size: 25px"></i>
+      </button>
+    </div>
+    <div class="sidebar" id="sidebar">
+      <i class="bi bi-arrow-left back-arrow" id="back-arrow"></i>
+      <a href="/">All Brands</a>
+      <a href="" class="sidebar-extras"><i class="bi bi-tablet-landscape"></i> Pads</a>
+      <a href="" class="sidebar-extras"><i class="bi bi-earbuds"></i> Audio</a>
+      <a href="/brand/Apple"> <img src="/images/Apple-Logosu.png" alt="Apple" /> Apple </a>
+      <a href="/brand/Google">
+        <img
+          src="/images/png-transparent-google-logo-g-suite-google-guava-google-plus-company-text-logo.png"
+        />
+        Google
+      </a>
+      <a href="/brand/iQOO"> <img src="/images/iqoo-logo-01.jpg" alt="iQOO" /> iQOO </a>
+      <a href="/brand/Lava"> <img src="/images/lava.jpg" alt="Lava" /> Lava </a>
+      <a href="/brand/Motorola">
+        <img src="/images/motorola.jpg" alt="Motorola" /> Motorola
+      </a>
+      <a href="/brand/OnePlus"> <img src="/images/oneplus.png" alt="1+" /> OnePlus </a>
+      <a href="/brand/Oppo"> <img src="/images/oppo.png" alt="Oppo" /> Oppo </a>
+      <a href="/brand/Poco"> <img src="/images/POCO_logo.png" alt="Poco" /> Poco </a>
+      <a href="/brand/Realme"> <img src="/images/realme.jpg" alt="Realme" /> Realme </a>
+      <a href="/brand/Redmi"> <img src="/images/Xiaomi_logo.png" alt="Redmi" /> Redmi </a>
+      <a href="/brand/Samsung"> <img src="/images/samsung.png" alt="samsung" /> Samsung </a>
+      <a href="/brand/Vivo"> <img src="/images/Vivo-Logo.jpg" alt="Vivo" /> Vivo </a>
+      <a href="/brand/Xiaomi">
+        <img src="/images/Xiaomi_logo.png" alt="Xiaomi" /> Xiaomi
+      </a>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Launch Date</th>
+            <th class="extradata">Available On</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% mobiles.forEach(function(phone) { %>
+          <tr>
+            <td><%= phone.sno %></td>
+            <td><%= phone.brand %></td>
+            <td><%= phone.model %></td>
+            <td>
+              <%= new Date(phone.launch_date).toLocaleDateString('en-GB', {
+              weekday: 'short', day: 'numeric', month: 'short', year: 'numeric'
+              }) %>
+            </td>
+            <td class="extradata"><%= phone.available_on %></td>
+          </tr>
+          <% }) %>
+        </tbody>
+      </table>
+    </div>
+    <footer class="footer">
+      <div class="footer-content">
+          <div class="footer-links">
+              <a href="https://forms.office.com/r/zijDG89VmP"><i class="bi bi-newspaper"></i> Feedback</a>
+          </div>
+          <p>The <i class="bi bi-tablet-landscape"> </i> Pads & <i class="bi bi-earbuds"> </i> Audio pages will be added soon</p>
+          <p>&copy; This website is designed to track the phones that are launched every year. If you want to suggest anything to be added or to share your experience, please feel free to fill out the feedback form. </p>
+          <div class="footer-socials">
+              <a href="https://x.com/ChErRyGaMeR012" target="_blank">
+                  <i class="bi bi-twitter-x"></i>
+              </a>
+              <a href="https://www.linkedin.com/in/sharvanthrapolu/"><i class="bi bi-linkedin"></i></a>
+          </div>
+          <div>
+            <h4><i class="bi bi-code-slash"></i> SharvanthRapolu</h4>
+          </div>
+      </div>
+  </footer>
+  
+    </div>
+    <script src="/script.js"></script>
+  </body>
+</html>
