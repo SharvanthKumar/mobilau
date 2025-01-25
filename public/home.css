@@ -7,7 +7,6 @@
 
 body {
     margin: 0;
-
 }
 
 .navbar {
@@ -215,8 +214,9 @@ tbody tr:hover {
     text-align: center;
     padding: 20px 10px;
     font-size: 14px;
-    position: absolute;
+    position: relative;
     bottom: 0;
+    width: 100%;
 }
 .table-title{
     display: flex;
