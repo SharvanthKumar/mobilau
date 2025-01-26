@@ -17,3 +17,36 @@ const closeSidebar = () => {
 backArrow.addEventListener("click", closeSidebar);
 overlay.addEventListener("click", closeSidebar);
 
+// JavaScript for the search icon, input field, and toggling label functionality
+
+const searchIcon = document.querySelector('.search-icon');
+const searchContainer = document.querySelector('.search-container');
+const searchInput = document.querySelector('.search-input');
+const searchLabel = document.querySelector('.search-label');
+
+searchIcon.addEventListener('click', function(event) {
+    event.stopPropagation();
+    searchContainer.classList.toggle('active');
+    searchLabel.style.display = 'none';
+    searchInput.focus();
+});
+
+document.addEventListener('click', function(event) {
+    if (!searchContainer.contains(event.target)) {
+        searchContainer.classList.remove('active');
+        searchLabel.style.display = 'block';
+    }
+});
+
+searchInput.addEventListener('input', function(event) {
+    const query = event.target.value.toLowerCase();
+    const rows = document.querySelectorAll('tbody tr');
+    rows.forEach(row => {
+        const rowText = row.innerText.toLowerCase();
+        if (rowText.includes(query)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+});
