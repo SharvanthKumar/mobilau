@@ -16,7 +16,7 @@ body {
     font-family: 'Tulpen One', cursive;
     font-size: 20px;
     letter-spacing: 0.2em;
-    border-bottom: solid 2px gold;
+    border-bottom: solid 1px rgb(86, 86, 86);
     background-color: black;
     color: white;
     padding: 0 20px;
@@ -52,6 +52,32 @@ body {
     border: none;
     background-color: transparent;
     color: white;
+  }
+  .secondary-navbar{
+    position: sticky;
+    top: 75px;
+    z-index: 10px;
+    background-color: #141414;
+    display: flex;
+    margin-left: 0.5px;
+    border: solid 1px;
+    box-shadow: 1px 1px 10px black;
+    border-bottom: solid 1px ;
+  }
+  .secondary-navbar-pages{
+    display: flex;
+    gap: 15px;
+    padding: 5px;
+    padding-left: 25px;
+  }
+  .secondary-navbar-pages .bi{
+    margin-right: -5px;
+    color: rgb(255, 255, 255);
+  }
+  .secondary-navbar-pages a{
+    font-family: Space mono;
+    color: white;
+    font-size: 12px;
   }
 
 .sidebar {
@@ -166,6 +192,9 @@ tbody tr:hover {
     background-color: #f9f9f9;
 }
 
+.secondary-navbar{
+    display: none;
+}
 
 @media(max-width: 768px){
     th{
@@ -178,6 +207,7 @@ tbody tr:hover {
         margin-left: 160px;
         gap: 10px;
     }
+
     
 }
 
@@ -198,8 +228,10 @@ tbody tr:hover {
         display: none !important;
     }
     .sidebar-extras{
-        display: flex !important;
-        gap: 10px;
+        display: none!important;
+    }
+    .secondary-navbar{
+        display: flex;
     }
     .navbar-extras{
         display: none !important;
@@ -321,7 +353,10 @@ tbody tr:hover {
         background-color: transparent;
         border: transparent; 
     }
-
+    .search-container .search-input{
+        transition: width 0.25s ease-in-out;
+        overflow: hidden;
+    }
     .search-icon {
         background-color: transparent;
         color: white;
@@ -330,7 +365,7 @@ tbody tr:hover {
     }
 
     .search-container.active .search-input {
-        width: 300px;
+        width: 250px;
         background-color: white; 
     }
     .search-container.active .search-icon {
@@ -359,3 +394,93 @@ tbody tr:hover {
         width: 150px; 
     }
 }}
+
+.features-card {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(0, 0, 0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 25px;
+    border: solid gold;
+    width: 90%;
+    max-width: 400px;
+    z-index: 1000;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.features-card h2 {
+    color: whitesmoke;
+    font-family: 'Tulpen One', cursive;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.features-card ul {
+    color: white;
+    font-family: Space Grotesk;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.features-card ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.features-card button {
+    font-family: Space Grotesk;
+    padding: 10px 20px;
+    background-color: black;
+    border: solid 1px gold;
+    color: white;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.features-card button:hover {
+    background-color: gold;
+    color: black;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@media (max-width: 425px){
+    .features-card{
+        max-width: 250px;
+        height: 350px;
+    }
+    .features-card ul li{
+        font-size: 0.6rem;
+    }
+    .features-card button{
+        position: absolute;
+        bottom: 20px; 
+        left: 50%;
+        transform: translateX(-50%); 
+        font-size: 0.6rem;
+    }
+}
