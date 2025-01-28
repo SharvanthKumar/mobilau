@@ -70,6 +70,69 @@ app.get('/2024/brand/:brand', async (req, res) => {
     }
 });
 
+// Endpoint for number of phones launched each month from phone_2024
+app.get('/api/phones-launched-monthly', async (req, res) => {
+    try {
+        const result = await db.query(`
+            SELECT
+                TO_CHAR(launch_date, 'Mon') AS month,
+                COUNT(*) AS phone_count
+            FROM
+                phone_2024
+            GROUP BY
+                TO_CHAR(launch_date, 'Mon')
+            ORDER BY
+                TO_DATE(TO_CHAR(launch_date, 'Mon'), 'Mon')
+        `);
+        res.json(result.rows);
+    } catch (err) {
+        console.error('Error fetching monthly launch data from phone_2024:', err);
+        res.status(500).send('Error fetching data');
+    }
+});
+
+
+// Endpoint for number of phones launched by each brand each month from phone_2024
+app.get('/api/phones-by-brand-monthly', async (req, res) => {
+    try {
+        const result = await db.query(`
+            SELECT
+                TO_CHAR(launch_date, 'Mon') AS month,
+                brand,
+                COUNT(*) AS phone_count
+            FROM
+                phone_2024
+            GROUP BY
+                TO_CHAR(launch_date, 'Mon'),
+                brand
+            ORDER BY
+                TO_DATE(TO_CHAR(launch_date, 'Mon'), 'Mon'),
+                brand
+        `);
+        res.json(result.rows);
+    } catch (err) {
+        console.error('Error fetching phones by brand monthly data from phone_2024:', err);
+        res.status(500).send('Error fetching data');
+    }
+});
+
+
+// Endpoint for number of phones launched by each brand from phone_2024
+app.get('/api/phones-launched-by-brand', async (req, res) => {
+    try {
+        const result = await db.query(`
+            SELECT brand, COUNT(*) AS phone_count
+            FROM phone_2024
+            GROUP BY brand
+            ORDER BY phone_count DESC`);
+        
+        res.json(result.rows);
+    } catch (err) {
+        console.error('Error fetching phone count by brand from phone_2024', err);
+        res.status(500).send('Server Error');
+    }
+});
+
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
