@@ -344,7 +344,7 @@ tbody tr:hover {
     cursor: pointer;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
-@media screen and (min-width: 425px) and (max-width: 560px) {
+@media screen and (min-width: 425px) and (max-width: 620px) {
     .search-container{
         margin-right: 10px;
     }
@@ -371,6 +371,16 @@ tbody tr:hover {
     .search-container.active .search-icon {
         background-color: rgb(255, 200, 0);
         color: black;
+    }
+    .sidebar-extras{
+        display: none!important;
+    }
+    .secondary-navbar{
+        display: flex;
+    }
+    .navbar-extras{
+        display: none !important;
+    }
 }
 
 @media(max-width: 375px){
@@ -382,7 +392,10 @@ tbody tr:hover {
         background-color: transparent;
         border: transparent; 
     }
-
+    .search-container .search-input{
+        transition: width 0.25s ease-in-out;
+        overflow: hidden;
+    }
     .search-icon {
         background-color: transparent;
         color: white;
@@ -391,9 +404,23 @@ tbody tr:hover {
     }
 
     .search-container.active .search-input {
-        width: 150px; 
+        width: 110px;
+        background-color: white; 
     }
-}}
+    .search-container.active .search-icon {
+        background-color: rgb(255, 200, 0);
+        color: black;
+    }
+    .sidebar-extras{
+        display: none!important;
+    }
+    .secondary-navbar{
+        display: flex;
+    }
+    .navbar-extras{
+        display: none !important;
+    }
+}
 
 .features-card {
     position: fixed;

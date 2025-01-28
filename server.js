@@ -44,6 +44,31 @@ app.get('/brand/:brand', async (req, res) => {
     }
 });
 
+app.get('/2024', async (req, res) => {
+    try{
+        const result = await db.query('select * from 2024 order by sno ASC');
+        res.render("2024", { mobiles: result.rows });
+    }
+    catch (err) {
+        console.error('Error fetching data', err);
+        res.status(500).send('Server Error');
+    }
+})
+app.get('/2024/brand/:brand', async (req, res) => {
+    const brand = req.params.brand;
+    console.log(brand);
+    try 
+    {
+        const result = await db.query('SELECT * FROM 2024 WHERE brand = $1 ORDER BY launch_date ASC', [brand]);
+        res.render("2024", { mobiles: result.rows });
+        
+    } 
+    catch (err) 
+    {
+        console.error('Error fetching data', err);
+        res.status(500).send('Server Error');
+    }
+});
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
