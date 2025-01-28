@@ -85,6 +85,7 @@ app.get('/api/phones-launched-monthly', async (req, res) => {
                 TO_DATE(TO_CHAR(launch_date, 'Mon'), 'Mon')
         `);
         res.json(result.rows);
+        console.log(result.rows);
     } catch (err) {
         console.error('Error fetching monthly launch data from phone_2024:', err);
         res.status(500).send('Error fetching data');
@@ -110,6 +111,7 @@ app.get('/api/phones-by-brand-monthly', async (req, res) => {
                 brand
         `);
         res.json(result.rows);
+        console.log(result.rows);
     } catch (err) {
         console.error('Error fetching phones by brand monthly data from phone_2024:', err);
         res.status(500).send('Error fetching data');
@@ -127,6 +129,7 @@ app.get('/api/phones-launched-by-brand', async (req, res) => {
             ORDER BY phone_count DESC`);
         
         res.json(result.rows);
+        console.log(result.rows);
     } catch (err) {
         console.error('Error fetching phone count by brand from phone_2024', err);
         res.status(500).send('Server Error');

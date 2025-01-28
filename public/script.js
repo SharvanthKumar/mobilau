@@ -53,23 +53,23 @@ searchInput.addEventListener('input', function(event) {
 
 //Card functionality
 
-window.addEventListener('load', function() {
-    const featuresCard = document.getElementById('featuresCard');
-    const dismissCard = document.getElementById('dismissCard');
+// window.addEventListener('load', function() {
+//     const featuresCard = document.getElementById('featuresCard');
+//     const dismissCard = document.getElementById('dismissCard');
     
-    if (!localStorage.getItem('hasSeenFeatures')) {
-        featuresCard.style.display = 'block';
-    }
+//     if (!localStorage.getItem('hasSeenFeatures')) {
+//         featuresCard.style.display = 'block';
+//     }
     
-    dismissCard.addEventListener('click', function() {
-        featuresCard.style.display = 'none';
-        localStorage.setItem('hasSeenFeatures', true);
-    });
+//     dismissCard.addEventListener('click', function() {
+//         featuresCard.style.display = 'none';
+//         localStorage.setItem('hasSeenFeatures', true);
+//     });
 
-    document.addEventListener('click', function(event) {
-        if (!featuresCard.contains(event.target) && featuresCard.style.display === 'block') {
-            featuresCard.style.display = 'none';
-            localStorage.setItem('hasSeenFeatures', true);
-        }
-    });
-});
+//     document.addEventListener('click', function(event) {
+//         if (!featuresCard.contains(event.target) && featuresCard.style.display === 'block') {
+//             featuresCard.style.display = 'none';
+//             localStorage.setItem('hasSeenFeatures', true);
+//         }
+//     });
+// });
