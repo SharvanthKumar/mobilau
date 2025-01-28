@@ -236,7 +236,15 @@ tbody tr:hover {
     .navbar-extras{
         display: none !important;
     }
+}
 
+#extradata2024{
+    table td.extradata {
+        display: none !important;
+    }
+    table th.extradata{
+        display: none !important;
+    }
 }
 .footer {
     border-top: solid 1px;
