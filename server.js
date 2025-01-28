@@ -46,7 +46,7 @@ app.get('/brand/:brand', async (req, res) => {
 
 app.get('/2024', async (req, res) => {
     try{
-        const result = await db.query('SELECT * FROM phones_2024 ORDER BY sno ASC');
+        const result = await db.query('SELECT * FROM phone_2024 ORDER BY sno ASC');
         res.render("2024", { mobiles: result.rows });
     }
     catch (err) {
@@ -59,7 +59,7 @@ app.get('/2024/brand/:brand', async (req, res) => {
     console.log(brand);
     try 
     {
-        const result = await db.query('SELECT * FROM phones_2024 WHERE brand = $1 ORDER BY launch_date ASC', [brand]);
+        const result = await db.query('SELECT * FROM phone_2024 WHERE brand = $1 ORDER BY launch_date ASC', [brand]);
         res.render("2024", { mobiles: result.rows });
         
     } 
