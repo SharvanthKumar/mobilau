@@ -43,7 +43,9 @@
           ><i class="bi bi-tablet-landscape"></i> Pads</a
         >
         <a href="" class="navbar-extras"><i class="bi bi-earbuds"></i> Audio</a>
-        <a href="/" class="navbar-extras"><i class="bi bi-calendar-minus"></i> 2025</a>
+        <a href="/" class="navbar-extras"
+          ><i class="bi bi-calendar-minus"></i> 2025</a
+        >
       </div>
       <div class="search-container">
         <input type="text" placeholder="Search..." class="search-input" />
@@ -81,11 +83,15 @@
       <a href="/2024/brand/Infinix">
         <img src="/images/infinix.png" alt="Infinix" /> Infinix
       </a>
-      <a href="/2024/brand/Itel"> <img src="/images/itel.jpg" alt="Itel" /> Itel </a>
+      <a href="/2024/brand/Itel">
+        <img src="/images/itel.jpg" alt="Itel" /> Itel
+      </a>
       <a href="/2024/brand/iQOO">
         <img src="/images/iqoo-logo-01.jpg" alt="iQOO" /> iQOO
       </a>
-      <a href="/2024/brand/Lava"> <img src="/images/lava.jpg" alt="Lava" /> Lava </a>
+      <a href="/2024/brand/Lava">
+        <img src="/images/lava.jpg" alt="Lava" /> Lava
+      </a>
       <a href="/2024/brand/Motorola">
         <img src="/images/motorola.jpg" alt="Motorola" /> Motorola
       </a>
@@ -95,7 +101,9 @@
       <a href="/2024/brand/OnePlus">
         <img src="/images/oneplus.png" alt="1+" /> OnePlus
       </a>
-      <a href="/2024/brand/Oppo"> <img src="/images/oppo.png" alt="Oppo" /> Oppo </a>
+      <a href="/2024/brand/Oppo">
+        <img src="/images/oppo.png" alt="Oppo" /> Oppo
+      </a>
       <a href="/2024/brand/Poco">
         <img src="/images/POCO_logo.png" alt="Poco" /> Poco
       </a>
@@ -126,7 +134,9 @@
         <a href="" class="secondary-navbar-extras"
           ><i class="bi bi-earbuds"></i> Audio</a
         >
-        <a href="/" class="secondary-navbar-extras"><i class="bi bi-calendar-minus"></i> 2025</a>
+        <a href="/" class="secondary-navbar-extras"
+          ><i class="bi bi-calendar-minus"></i> 2025</a
+        >
       </div>
     </div>
     <div class="overlay" id="overlay"></div>
@@ -155,11 +165,28 @@
               weekday: 'short', day: 'numeric', month: 'short', year: 'numeric'
               }) %>
             </td>
-            <td class="extradata" id="extradata2024"><%= phone.available_on %></td>
+            <td class="extradata" id="extradata2024">
+              <%= phone.available_on %>
+            </td>
           </tr>
           <% }) %>
         </tbody>
       </table>
+    </div>
+
+    <div class="chart-container">
+      <canvas id="monthlyLaunchChart"></canvas>
+    </div>
+    <div class="chart-container">
+      <canvas id="brandLaunchChart"></canvas>
+    </div>
+    <h5
+      style="font-family: Space Mono; text-align: center; margin-bottom: -75px"
+    >
+      Phones Launched by a company in a month
+    </h5>
+    <div class="chart-container">
+      <canvas id="monthlyBrandLaunchChart"></canvas>
     </div>
     <footer class="footer">
       <div class="footer-content">
@@ -191,6 +218,10 @@
         </div>
       </div>
     </footer>
+
+    <script src="/scrollanimation.js"></script>
+    <script src="/graphs.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="/script.js"></script>
   </body>
 </html>
