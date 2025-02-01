@@ -69,7 +69,9 @@ app.get('/2024/brand/:brand', async (req, res) => {
         res.status(500).send('Server Error');
     }
 });
-
+app.get('/whatsnew',(req,res)=>{
+    res.render('whatsnew');
+})
 // Endpoint for number of phones launched each month from phone_2024
 app.get('/api/phones-launched-monthly', async (req, res) => {
     try {

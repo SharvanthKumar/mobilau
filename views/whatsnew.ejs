@@ -2,9 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="google-adsense-account" content="ca-pub-9393555138984114" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MobiLau</title>
+    <title>What's New</title>
+    <link rel="stylesheet" href="/whatsnew.css" />
+    <link rel="stylesheet" href="/home.css" />
     <link
       rel="icon"
       href="/images/logo2.png"
@@ -17,7 +18,6 @@
       href="https://fonts.googleapis.com/css2?family=Tulpen+One&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/home.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
@@ -113,43 +113,17 @@
         <a href="" class="secondary-navbar-extras"
           ><i class="bi bi-earbuds"></i> Audio</a
         >
-        <a href="/2024" class="secondary-navbar-extras"><i class="bi bi-calendar-minus"></i> 2024</a>
+        <a href="/2024" class="secondary-navbar-extras"
+          ><i class="bi bi-calendar-minus"></i> 2024</a
+        >
         <div class="whats-new">
           <a href="/whatsnew">✨What's New</a>
         </div>
       </div>
     </div>
     <div class="overlay" id="overlay"></div>
-    <div class="table-title">
-      <h3>Mobiles Launched in 2025</h3>
-    </div>
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>S.No</th>
-            <th>Brand</th>
-            <th>Model</th>
-            <th>Launch Date</th>
-            <th class="extradata">Available On</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% mobiles.forEach(function(phone) { %>
-          <tr>
-            <td><%= phone.sno %></td>
-            <td><%= phone.brand %></td>
-            <td><%= phone.model %></td>
-            <td>
-              <%= new Date(phone.launch_date).toLocaleDateString('en-GB', {
-              weekday: 'short', day: 'numeric', month: 'short', year: 'numeric'
-              }) %>
-            </td>
-            <td class="extradata"><%= phone.available_on %></td>
-          </tr>
-          <% }) %>
-        </tbody>
-      </table>
+    <div class="grid-container" id="updates-container">
+      <!-- JavaScript will insert updates here -->
     </div>
     <footer class="footer">
       <div class="footer-content">
@@ -181,7 +155,7 @@
         </div>
       </div>
     </footer>
-    
+    <script src="/whatsnew.js"></script>
     <script src="/script.js"></script>
   </body>
 </html>
